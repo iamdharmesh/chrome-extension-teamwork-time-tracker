@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Teamwork Time Tracker",
+  "description": "Chrome extension for Teamwork time tracking",
+  "version": "0.1.0",
+  "action": {
+    "default_icon": "images/icon.png",
+    "default_popup": "popup.html"
+  },
+
+  "content_scripts": [
+      {
+          "matches": [ "https://github.com/*" ],
+          "js": ["js/content-script.js"],
+					"css": ["css/content-script.css"],
+          "run_at": "document_end"
+      }
+  ],
+
+  "permissions": [
+    "storage",
+    "identity"
+  ],
+
+  "host_permissions": [
+    "https://*.teamwork.com/*",
+    "https://github.com/*"
+  ]
+}

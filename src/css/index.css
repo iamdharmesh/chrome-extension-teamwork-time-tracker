@@ -1,0 +1,119 @@
+.teamwork-tenup-create-timer .form-container {
+	background-color: #ffffff;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	max-width: 400px;
+	margin: 50px auto;
+}
+
+.teamwork-tenup-create-timer h2 {
+	text-align: center;
+	margin-bottom: 20px;
+	color: #333;
+}
+
+.teamwork-tenup-create-timer .form-group {
+	margin-bottom: 15px;
+}
+
+.teamwork-tenup-create-timer label {
+	display: block;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+.teamwork-tenup-create-timer input[type="text"],
+.teamwork-tenup-create-timer input[type="password"] {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	font-size: 16px;
+	box-sizing: border-box;
+}
+
+.teamwork-tenup-create-timer .error {
+	color: red;
+	font-size: 12px;
+	margin-top: 5px;
+}
+
+button.teamwork-button.button-primary {
+	position: relative;
+	text-align: center;
+	border-radius: 9999px;
+	outline-style: none;
+	min-width: 0;
+	font-weight: 500;
+	white-space: nowrap;
+	background: hsla(228, 65%, 55%, 1);
+	color: hsla(0, 0%, 100%, 1);
+	width: auto;
+	padding: 10px 24px;
+	cursor: pointer;
+	font-size: 16px;
+	border: none;
+}
+
+button.teamwork-button.button-primary:hover {
+	background-color: hsla(228, 52%, 49%, 1);
+}
+
+button.teamwork-button.button-secondary {
+	position: relative;
+	text-align: center;
+	border-radius: 9999px;
+	outline-style: none;
+	min-width: 0;
+	font-weight: 500;
+	white-space: nowrap;
+	background: transparent;
+	color: hsla(228, 65%, 55%, 1);
+	width: auto;
+	padding: 10px 24px;
+	cursor: pointer;
+	font-size: 16px;
+	border-color: hsla(228, 65%, 55%, 1);
+	;
+}
+
+button.teamwork-button.button-secondary:hover {
+	color: hsla(228, 52%, 49%, 1);
+	border-color: hsla(228, 52%, 49%, 1);
+}
+
+.teamwork-tenup-create-timer .form-wrapper {
+	display: block;
+	margin-bottom: 12px;
+}
+
+.teamwork-tenup-create-timer .form-wrapper select {
+	width: 100%;
+	border: 1px solid #d1d9e0;
+	padding: 8px;
+	border-radius: 4px;
+}
+
+.teamwork-tenup-create-timer textarea {
+	border: 1px solid #d1d9e0;
+	padding: 8px;
+	border-radius: 4px;
+	box-sizing: border-box;
+	width: 100%;
+}
+
+.teamwork-tenup-create-timer .error {
+	color: red;
+	margin-top: 12px;
+}
+
+.teamwork-tenup-create-timer h2 {
+	text-align: left;
+}
+
+#extension-popup-root .teamwork-tenup-create-timer {
+	min-width: 480px;
+    padding: 10px;
+    box-sizing: border-box;
+}
