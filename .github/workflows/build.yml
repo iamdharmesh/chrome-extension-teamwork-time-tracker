@@ -27,5 +27,5 @@ jobs:
         REPO: self
         BRANCH: stable
         FOLDER: dist
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         MESSAGE: 'Release: ({sha}) {msg}'
