@@ -4,6 +4,12 @@ import { createRoot } from 'react-dom/client';
 import { TimerButton } from './components/TimerButton';
 
 const renderTimerButton = () => {
+	const timerButton = document.querySelector('.teamwork-timer-wrapper');
+	// If the button already exists, don't render it again
+	if (timerButton) {
+		return;
+	}
+
 	const actions = document.querySelector('div.gh-header-actions');
 	const newActions = document.querySelector('div[data-component="PH_Actions"] div:first-child');
 
@@ -20,6 +26,10 @@ const renderTimerButton = () => {
 		root.render(<TimerButton />);
 	}
 };
+
+document.addEventListener('turbo:load', function () {
+	renderTimerButton();
+});
 
 const renderTrackerButton = () => {
 	if (document.readyState === 'loading') {

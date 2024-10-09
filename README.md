@@ -24,3 +24,4 @@
 ## Known Issues
 
 - This extension is kind of MVP, so some parts require improvements.
+- The extension uses the "API Token" approach instead of OAuth2, as we are not planning to publish the extension on the Chrome Store at this time.

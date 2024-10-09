@@ -13,15 +13,12 @@
           "matches": [ "https://github.com/*" ],
           "js": ["js/content-script.js"],
 					"css": ["css/content-script.css"],
-          "run_at": "document_end"
+					"run_at": "document_end"
       }
   ],
-
   "permissions": [
-    "storage",
-    "identity"
+    "storage"
   ],
-
   "host_permissions": [
     "https://*.teamwork.com/*",
     "https://github.com/*"
