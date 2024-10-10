@@ -1,13 +1,15 @@
 body {
-	width: 480px;
+	width: 500px;
 	height: auto;
 	min-height: 200px;
 	background-color: #ffffff;
 	position: relative;
+	font-size: 14px;
+	box-sizing: border-box;
 }
 
 #extension-popup-root {
-	width: 480px;
+	width: 500px;
 	height: auto;
 	background-color: #ffffff;
 	position: relative;
@@ -47,6 +49,14 @@ body {
 	font-size: 16px;
 	box-sizing: border-box;
 }
+
+#extension-popup-root input[type="text"].timer-time-input {
+    font-size: 24px;
+    padding: 4px 10px;
+    text-align: right;
+}
+
+
 
 #extension-popup-root .timer-item {
 	border: 1px solid #ccc;
@@ -96,7 +106,7 @@ body {
 
 #extension-popup-root .footer {
 	text-align: right;
-	margin-top: 20px;
+	margin-top: 0px;
 }
 
 #extension-popup-root button.teamwork-button {

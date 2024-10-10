@@ -53,6 +53,13 @@ export const createTimer = (description, projectId, taskId) => {
 	});
 };
 
+export const logTime = (taskId, data) => {
+	return callTeamworkAPI(`projects/api/v3/tasks/${taskId}/time.json`, {
+		method: 'POST',
+		body: JSON.stringify(data),
+	});
+};
+
 export const pauseTimer = (timerId) => {
 	return callTeamworkAPI(`/projects/api/v3/me/timers/${timerId}/pause.json`, {
 		method: 'PUT',
