@@ -4,7 +4,13 @@
 import React, { useState, useEffect } from 'react';
 import dayjs from 'dayjs';
 import { createTimer, getProjects, getTaskLists, getTasks, logTime } from '../api/teamwork';
-import { getHoursAndMinutes, hasValidTime } from '../utils';
+import {
+	getHoursAndMinutes,
+	getIssueUrl,
+	getRecentTaskInfo,
+	hasValidTime,
+	setRecentTaskInfo,
+} from '../utils';
 
 export const CreateTimer = ({ closeModal, inPopup = false }) => {
 	const [projects, setProjects] = useState([]);
@@ -13,28 +19,33 @@ export const CreateTimer = ({ closeModal, inPopup = false }) => {
 	const [selectedProject, setSelectedProject] = useState('');
 	const [selectedTasklist, setSelectedTasklist] = useState('');
 	const [selectedTask, setSelectedTask] = useState('');
-	const [description, setDescription] = useState(inPopup ? '' : window.location?.href || '');
+	const [description, setDescription] = useState();
 	const [error, setError] = useState('');
 	const [time, setTime] = useState('');
 	const [date, setDate] = useState(dayjs().format('YYYY-MM-DD'));
 	const validTime = hasValidTime(time);
 
+	// Set URL as description
 	useEffect(() => {
-		if (!inPopup) {
-			return;
-		}
-
-		chrome.tabs.query({ active: true, lastFocusedWindow: true }, ([tab]) => {
-			if (
-				tab &&
-				tab.url &&
-				tab.url.includes('https://github.com/') &&
-				(tab.url.includes('/pull/') || tab.url.includes('/issues/'))
-			) {
-				setDescription(tab.url);
-			}
+		getIssueUrl(inPopup).then((url) => {
+			setDescription(url);
 		});
 	}, [inPopup, setDescription]);
+
+	// Pre-select task details if known repo based on recent selection.
+	useEffect(() => {
+		getRecentTaskInfo(inPopup).then((info) => {
+			if (info.projectId) {
+				setSelectedProject(info.projectId);
+			}
+			if (info.tasklistId) {
+				setSelectedTasklist(info.tasklistId);
+			}
+			if (info.taskId) {
+				setSelectedTask(info.taskId);
+			}
+		});
+	}, [inPopup, setSelectedProject, setSelectedTasklist, setSelectedTask]);
 
 	// Fetch projects when component mounts
 	useEffect(() => {
@@ -100,6 +111,13 @@ export const CreateTimer = ({ closeModal, inPopup = false }) => {
 		setError('');
 		try {
 			const { hours, minutes } = getHoursAndMinutes(time);
+
+			// Set recent task info for pre-selection
+			setRecentTaskInfo(inPopup, {
+				projectId: selectedProject,
+				tasklistId: selectedTasklist,
+				taskId: selectedTask,
+			});
 
 			// Log time if hours or minutes are greater than 0
 			let data;
