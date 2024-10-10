@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { completeTimer, pauseTimer, resumeTimer } from '../api/teamwork';
 import { removeApiToken } from '../utils';
-import { Timer } from './TImer';
+import { Timer } from './Timer';
 import { Logout } from './Logout';
 
 export const Timers = ({ timers, setApiToken, reloadTimers }) => {

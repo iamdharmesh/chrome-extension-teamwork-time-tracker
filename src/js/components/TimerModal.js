@@ -24,7 +24,7 @@ const customStyles = {
 	},
 };
 
-const TimerModal = ({ isModalOpen, setIsModalOpen }) => {
+export const TimerModal = ({ isModalOpen, setIsModalOpen }) => {
 	if (!isModalOpen) {
 		return null;
 	}
@@ -43,5 +43,3 @@ const TimerModal = ({ isModalOpen, setIsModalOpen }) => {
 		</div>
 	);
 };
-
-export default TimerModal;

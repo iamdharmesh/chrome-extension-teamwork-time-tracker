@@ -4,11 +4,8 @@ import { createRoot } from 'react-dom/client';
 import '../css/index.css';
 import '../css/popup.css';
 import { getApiToken } from './utils';
-import { ApiTokenForm } from './components/ApiTokenForm';
-import { Timers } from './components/Timers';
+import { ApiTokenForm, Timers, Logout, CreateTimer } from './components';
 import { getTimers } from './api/teamwork';
-import { Logout } from './components/Logout';
-import { CreateTimer } from './components/CreateTimer';
 
 const Popup = () => {
 	const [error, setError] = useState('');

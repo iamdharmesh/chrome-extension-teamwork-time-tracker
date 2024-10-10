@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
-import TimerModal from './TimerModal';
+import { TimerModal } from './TimerModal';
 
 export const TimerButton = () => {
 	const [isModalOpen, setIsModalOpen] = useState(false);
@@ -32,7 +32,7 @@ export const TimerButton = () => {
 						d="M7 6.626c0-.745 0-1.117.155-1.322A.77.77 0 017.721 5c.257-.016.567.191 1.186.604l8.062 5.374c.512.342.767.512.857.727.078.188.078.4 0 .588-.09.215-.345.385-.857.727l-8.062 5.374c-.62.413-.93.62-1.186.604a.77.77 0 01-.566-.303C7 18.491 7 18.12 7 17.374z"
 					/>
 				</svg>
-				Start time
+				Start timer
 			</button>
 			<TimerModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
 		</>

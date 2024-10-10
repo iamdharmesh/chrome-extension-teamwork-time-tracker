@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { TimerButton } from './components/TimerButton';
+import { TimerButton } from './components';
 
 const renderTimerButton = () => {
 	const timerButton = document.querySelector('.teamwork-timer-wrapper');
