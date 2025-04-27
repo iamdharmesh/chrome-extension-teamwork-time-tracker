@@ -49,8 +49,9 @@ export const getIssueUrl = async (inPopup) => {
 		if (
 			tab &&
 			tab.url &&
-			tab.url.includes('https://github.com/') &&
-			(tab.url.includes('/pull/') || tab.url.includes('/issues/'))
+			((tab.url.includes('https://github.com/') &&
+				(tab.url.includes('/pull/') || tab.url.includes('/issues/'))) ||
+				(tab.url.includes('https://linear.app/') && tab.url.includes('/issue/')))
 		) {
 			return tab.url;
 		}

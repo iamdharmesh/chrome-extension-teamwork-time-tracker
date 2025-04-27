@@ -73,7 +73,7 @@ export const resumeTimer = (timerId) => {
 };
 
 export const completeTimer = (timerId) => {
-	return callTeamworkAPI(`/projects/api/v3/me/timers/${timerId}/complete.json`, {
+	return callTeamworkAPI(`projects/api/v3/me/timers/${timerId}/complete.json`, {
 		method: 'PUT',
 	});
 };
