@@ -22,6 +22,7 @@
   ],
   "host_permissions": [
     "https://*.teamwork.com/*",
-    "https://github.com/*"
+    "https://github.com/*",
+		"https://linear.app/*"
   ]
 }
